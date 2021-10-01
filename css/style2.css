@@ -1,0 +1,48 @@
+.menu-1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    scale: 2;
+}
+
+.menu-2{
+    visibility: hidden;
+    padding-left: 100px;
+}
+
+.active{
+    display: block;
+}
+
+ul {
+    list-style: none;
+    width: 15%;
+    height: 20px;
+}
+
+ul li:nth-child(1) {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+ul li:last-child {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+ul li {
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    text-align: center;
+    align-items: center;
+    height: 27px;
+    width: 100px;
+    cursor: pointer;
+    font-family: "Segoe UI";
+    user-select: none;
+    background-color: white;
+}
+
+ul li:hover {
+    background-color: rgba(0, 0, 0, 0.025);
+}

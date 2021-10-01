@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LR 2</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style2.css">
+</head>
+
+<body>
+    <ul id="menu-1" class="menu-1">
+        <li onclick="">Пункт 1
+            <ul class="menu-2">
+                <li>Пункт 1.1</li>
+                <li>Пункт 1.2</li>
+                <li>Пункт 1.3</li>
+            </ul>
+        </li>
+        <li onclick="">Пункт 2
+            <ul class="menu-2">
+                <li>Пункт 2.1</li>
+                <li>Пункт 2.2</li>
+                <li>Пункт 2.3</li>
+            </ul>
+        </li>
+        <li onclick="">Пункт 3
+            <ul class="menu-2">
+                <li>Пункт 3.1</li>
+                <li>Пункт 3.2</li>
+                <li>Пункт 3.3</li>
+            </ul>
+        </li>
+    </ul>
+</body>
+<script type="text/javascript">
+    window.onload = function () {
+        let menus = document.getElementsByClassName("menu-2");
+        for (let index = 0; index < menus.length; index++) {
+            const element = menus[index];
+            element.style.visibility == "hidden";
+            console.log(element)
+        }
+        var navbar = document.getElementById("menu-1").querySelectorAll('li');
+        console.log(navbar);
+        for (var i = 0; i < navbar.length; i++) {
+            navbar[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                this.style.cursor = "pointer";
+                if (this.firstElementChild != null) {
+                    if(this.firstElementChild.style.visibility == "visible") {
+                        this.firstElementChild.style.visibility = "hidden";
+                    }
+                    else{
+                        this.firstElementChild.style.visibility = "visible";
+                    }
+                   
+                }
+            })
+        }
+    }
+
+</script>
+
+</html>

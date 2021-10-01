@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.header{
+    border-bottom: 3px solid #000;
+    margin-bottom: 15px;
+}
+.border-block {
+    border: 2px solid rgba(0, 0, 0, 0.425);
+}
+
+.header {
+    color: black;
+    
+}
+
+.content {
+    border-radius: 5px;
+}
+.ifame{
+    width: 100%;
+    height: 100%;
+}
