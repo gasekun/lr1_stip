@@ -18,55 +18,113 @@
 </head>
 
 <body>
-    <ul id="menu-1" class="menu-1">
-        <li onclick="">Пункт 1
-            <ul class="menu-2">
-                <li>Пункт 1.1</li>
-                <li>Пункт 1.2</li>
-                <li>Пункт 1.3</li>
-            </ul>
-        </li>
-        <li onclick="">Пункт 2
-            <ul class="menu-2">
-                <li>Пункт 2.1</li>
-                <li>Пункт 2.2</li>
-                <li>Пункт 2.3</li>
-            </ul>
-        </li>
-        <li onclick="">Пункт 3
-            <ul class="menu-2">
-                <li>Пункт 3.1</li>
-                <li>Пункт 3.2</li>
-                <li>Пункт 3.3</li>
-            </ul>
-        </li>
-    </ul>
+    <div class="card-body">
+        <a class="btn btn-primary d-grid" data-bs-toggle="collapse" href="#collapse1" role="button"
+            aria-expanded="false" aria-controls="collapse1">
+            Условие лабораторной работы
+        </a>
+        <div class="collapse" id="collapse1">
+            <div class="card card-body">
+                Вариант 6. Вертикальное двухуровневое меню, раскрывающееся при щелчке левой кнопкой мыши. Второй уровень
+                меню скрывается при повторном щелчке по выбранному пункту.
+                Вариант 6. Организуйте последовательный просмотр изображений (не меньше четырех). Смена изображений
+                должна осуществляться через некоторые равные промежутки времени.
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <a class="btn btn-primary d-grid" data-bs-toggle="collapse" href="#collapse2" role="button"
+            aria-expanded="false" aria-controls="collapse2e">
+            Результаты выполнения работы
+        </a>
+        <div class="collapse" id="collapse2">
+            <div class="card card-body">
+                <div class="first">
+                    <ul id="menu-1" class="menu-1">
+                        <li onclick="">Пункт 1
+                            <ul class="menu-2">
+                                <li>Пункт 1.1</li>
+                                <li>Пункт 1.2</li>
+                                <li>Пункт 1.3</li>
+                            </ul>
+                        </li>
+                        <li onclick="">Пункт 2
+                            <ul class="menu-2">
+                                <li>Пункт 2.1</li>
+                                <li>Пункт 2.2</li>
+                                <li>Пункт 2.3</li>
+                            </ul>
+                        </li>
+                        <li onclick="">Пункт 3
+                            <ul class="menu-2">
+                                <li>Пункт 3.1</li>
+                                <li>Пункт 3.2</li>
+                                <li>Пункт 3.3</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="second">
+                    <div id="karusel" class="karusel" width="320px" height="180px">
+                        <img src="img/1.jpg" alt="" width="320px" height="180px">
+                        <img src="img/2.jpg" alt="" width="320px" height="180px">
+                        <img src="img/3.jpg" alt="" width="320px" height="180px">
+                        <img src="img/4.jpg" alt="" width="320px" height="180px">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-body">
+        <a class="btn btn-primary d-grid" data-bs-toggle="collapse" href="#collapse3" role="button"
+            aria-expanded="false" aria-controls="collapse3">
+            Cсылки на программный код работы
+        </a>
+        <div class="collapse" id="collapse3">
+            <div class="card card-body">
+                <a class="btn btn-outline-info" href="https://github.com/gasekun/lr1_stip" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </div>
+
 </body>
 <script type="text/javascript">
+    let pos = 0;
     window.onload = function () {
         let menus = document.getElementsByClassName("menu-2");
         for (let index = 0; index < menus.length; index++) {
             const element = menus[index];
             element.style.visibility == "hidden";
-            console.log(element)
         }
         var navbar = document.getElementById("menu-1").querySelectorAll('li');
-        console.log(navbar);
         for (var i = 0; i < navbar.length; i++) {
-            navbar[i].addEventListener("click", function () {
-                this.classList.toggle("active");
+            navbar[i].addEventListener("click", function (element) {
                 this.style.cursor = "pointer";
+                var list_menu = element.path[0].parentElement.children;
                 if (this.firstElementChild != null) {
-                    if(this.firstElementChild.style.visibility == "visible") {
+                    if (this.firstElementChild.style.visibility == "visible") {
                         this.firstElementChild.style.visibility = "hidden";
                     }
-                    else{
+                    else {
                         this.firstElementChild.style.visibility = "visible";
                     }
-                   
                 }
             })
         }
+
+        let karusel = document.getElementById("karusel");
+        setInterval(function () {
+            var images = karusel.children;
+            pos -= 320;
+            if (pos < -320 * (images.length - 1)) {
+                pos = 0;
+            }
+            for (let index = 0; index < images.length; index++) {
+                const element = images[index];
+                element.style.transform = 'translateX(' + pos + 'px)';
+            }
+        }, 2000);
     }
 
 </script>
