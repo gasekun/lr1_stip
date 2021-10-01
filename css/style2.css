@@ -4,7 +4,7 @@
     transform: translate(-50%);
 }
 
-.menu-2{
+.menu-2 {
     visibility: hidden;
     padding-left: 100px;
 }
@@ -41,29 +41,31 @@ ul li:hover {
     background-color: rgba(0, 0, 0, 0.025);
 }
 
-.karusel{
-  width: 320px;
-  height: 180px;
-  overflow: hidden;
-  display: flex;
-  padding: 0px;
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%);
-}
-.karusel img{
-    flex: 0 0 auto;
+.karusel {
+    width: 320px;
+    height: 180px;
+    overflow: hidden;
+    display: flex;
+    padding: 0px;
+    position: absolute;
+    left: 50%;
     border-radius: 5px;
+    transform: translate(-50%);
+}
+
+.karusel img {
+    flex: 0 0 auto;
     transition: transform 0.7s ease-in-out;
 }
 
 .first {
-    height:180px;
+    height: 180px;
     padding: 0;
     margin-bottom: 10px;
     border-bottom: 2px solid rgba(0, 0, 0, 0.125);
 }
+
 .second {
-    height:180px;
+    height: 180px;
     padding: 0;
 }

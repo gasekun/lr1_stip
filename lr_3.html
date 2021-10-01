@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LR_3</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style3.css">
+</head>
+
+<body>
+    <div class="card-body">
+        <a class="btn btn-primary d-grid" data-bs-toggle="collapse" href="#collapse1" role="button"
+            aria-expanded="false" aria-controls="collapse1">
+            Условие лабораторной работы
+        </a>
+        <div class="collapse" id="collapse1">
+            <div class="card card-body">
+                Вариант 6:
+                Тест на скорость реакции. После щелчка по кнопке в тестовом поле случайным образом, через случайные
+                промежутки времени появляются изображения, по которым нужно успеть щелкнуть. Попадание обозначается
+                каким-либо образом (например, «взрывом» изображения).
+
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <a class="btn btn-primary d-grid" data-bs-toggle="collapse" href="#collapse2" role="button"
+            aria-expanded="false" aria-controls="collapse2e">
+            Результаты выполнения работы
+        </a>
+        <div class="collapse" id="collapse2">
+            <div class="card card-body">
+                <div class="text-center"><h2>Счет:</h2><h3 id="text_count">0</h3></div>
+                <div class="plane">
+                    <button class="btn btn-primary btn-start" onclick="startgame()">Start</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-body">
+        <a class="btn btn-primary d-grid" data-bs-toggle="collapse" href="#collapse3" role="button"
+            aria-expanded="false" aria-controls="collapse3">
+            Cсылки на программный код работы
+        </a>
+        <div class="collapse" id="collapse3">
+            <div class="card card-body">
+                <a class="btn btn-outline-info" href="https://github.com/gasekun/lr1_stip" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    let global_time = 2000;
+    let plane = document.querySelector('.plane');
+    let counter = document.getElementById('text_count');
+    let count = 0;
+    function startgame() {
+        document.querySelector(".btn-start").remove();
+        setInterval((params) => {
+            let time = getRandomArbitrary(0, 1000);
+            setTimeout(() => {
+                var img = document.createElement('img');
+                img.classList.add("target");
+                plane.appendChild(img);
+                img.style.left = getRandomArbitrary(30, 470) + 'px';
+                img.style.top = getRandomArbitrary(30, 470) + 'px';
+                img.src = "/img/target.png";
+                img.addEventListener('click', (element) => {
+                    var audio = new Audio('/sound/shoot.mp3');
+                    audio.play();
+                    var boom = document.createElement('img');
+                    boom.src = "/img/boom.png";
+                    plane.appendChild(boom);
+                    boom.classList.add("boom");
+                    boom.style.left = element.path[0].style.left;
+                    boom.style.top = element.path[0].style.top;
+                    setTimeout(() => {
+                        boom.remove();
+                        global_time--;
+                    }, 1000);
+                    counter.innerText = '' + ++count;
+                    console.log(count)
+                    element.path[0].remove();
+                });
+
+            }, time);
+        }, global_time);
+    }
+
+    function getRandomArbitrary(min, max) {
+        return Math.random() * (max - min) + min;
+    }
+</script>
+
+</html>
