@@ -75,12 +75,12 @@
                 plane.appendChild(img);
                 img.style.left = getRandomArbitrary(30, 470) + 'px';
                 img.style.top = getRandomArbitrary(30, 470) + 'px';
-                img.src = "/img/target.png";
+                img.src = "img/target.png";
                 img.addEventListener('click', (element) => {
-                    var audio = new Audio('/sound/shoot.mp3');
+                    var audio = new Audio('sound/shoot.mp3');
                     audio.play();
                     var boom = document.createElement('img');
-                    boom.src = "/img/boom.png";
+                    boom.src = "img/boom.png";
                     plane.appendChild(boom);
                     boom.classList.add("boom");
                     boom.style.left = element.path[0].style.left;
