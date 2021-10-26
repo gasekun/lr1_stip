@@ -1,0 +1,25 @@
+.plane {
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    height: 400px;
+    width: 400px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+}
+.btn-outline-success{
+    width: 400px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    margin-bottom: 10px;
+}
+
+.anim-block {
+    background: black;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}

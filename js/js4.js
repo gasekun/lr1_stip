@@ -96,21 +96,21 @@ function checkText() {
     let find_reg = document.querySelector('#find_reg');
     let regex = /a\Db/g;
     let match;
-    if (regex.exec(text_reg.value) == null) {
+    console.log(text_reg.value);
+    if (String(text_reg.value).matchAll(regex) === null) {
         let error_reg = document.querySelector('#error_reg');
         error_reg.style.display = 'block';
-        error_reg.innerHTML = "Не найдено ни одного совпадения."
+        error_reg.innerHTML = "Количество найденых елементов" + match.lenght;
         return;
     }
-    while ((match = regex.exec(text_reg.value)) !== null) {
-        if (match.index === regex.lastIndex) {
-            regex.lastIndex++;
-        }
-        match.forEach((find, groupIndex) => {
-            let li_el = document.createElement('li');
-            li_el.innerHTML = find;
-            li_el.classList.add('list-group-item');
-            find_reg.appendChild(li_el);
-        });
-    }
+    match = Array.from(String(text_reg.value).matchAll(regex));
+
+    console.log(match.length);
+    match.forEach((find, groupIndex) => {
+        let li_el = document.createElement('li');
+        li_el.innerHTML = find;
+        li_el.classList.add('list-group-item');
+        find_reg.appendChild(li_el);
+    });
+
 }

@@ -1,0 +1,20 @@
+.plane {
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    height: 400px;
+    width: 400px;
+    LEFT: 50%;
+}
+
+.anim-block {
+    background: yellow;
+    height: 50px;
+    width: 50px;
+    position: relative;
+    left: 375px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-size: 13px;
+    text-align: center;
+    vertical-align: middle;
+}
