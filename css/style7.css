@@ -1,0 +1,22 @@
+*{
+    font-size:15px;
+    margin:0.5em;
+    font-family: Arial;
+    display:block;
+}
+
+way {
+    font-size: 24px;
+}
+
+stop {
+    margin: 10px;
+}
+
+stops {
+    border: 1px solid #595959;
+}
+
+timestart{
+    text-decoration: underline;
+}
