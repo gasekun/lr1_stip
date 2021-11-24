@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSche">
+    <xs:element name="timetable">
+        <xs:complexType>
+            <xs:sequence>
+
+                <xs:element name="path">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="way" type="xs:string" />
+
+                            <xs:element name="stops">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="stop" type="xs:string" />
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+
+                            <xs:element name="datestart" type="xs:date" />
+
+                            <xs:element name="timesstart">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="timestart" type="xs:string" />
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+
+                            <xs:element name="price" type="xs:decimal" />
+                            <xs:element name="countfreeplaces" type="xs:integer" />
+                            
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

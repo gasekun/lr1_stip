@@ -1,0 +1,10 @@
+<!ELEMENT timetable (path*)>
+<!ELEMENT path (way,stops,datestart,timesstart,price,countfreeplaces)>
+<!ELEMENT way (#PCDATA)>
+<!ELEMENT stops (stop+)>
+<!ELEMENT stop (#PCDATA)>
+<!ELEMENT datestart (#PCDATA)>
+<!ELEMENT timesstart (timestart+)>
+<!ELEMENT timestart (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT countfreeplaces (#PCDATA)>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="css/style7.css"?>
+<!DOCTYPE timetable SYSTEM "lr_8_1.dtd">
+<timetable>
+    <path>
+        <way>Днепр</way>
+        <stops>
+            <stop>1 остановка</stop>
+            <stop>2 остановка</stop>
+            <stop>3 остановка</stop>
+            <stop>4 остановка</stop>
+        </stops>
+        <datestart>09.10.21</datestart>
+        <timesstart>
+            <timestart>10:00</timestart>
+            <timestart>12:00</timestart>
+            <timestart>14:00</timestart>
+            <timestart>16:00</timestart>
+            <timestart>18:00</timestart>
+        </timesstart>
+        <price>25,00₴</price>
+        <countfreeplaces>20 мест</countfreeplaces>
+    </path>
+</timetable>

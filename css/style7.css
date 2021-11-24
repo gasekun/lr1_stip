@@ -1,8 +1,8 @@
-*{
-    font-size:15px;
-    margin:0.5em;
+* {
+    font-size: 15px;
+    margin: 0.5em;
     font-family: Arial;
-    display:block;
+    display: block;
 }
 
 way {
@@ -11,12 +11,12 @@ way {
 
 stop {
     margin: 10px;
+    display: list-item;
+    list-style: disc;
 }
 
-stops {
-    border: 1px solid #595959;
-}
-
-timestart{
+timestart {
     text-decoration: underline;
+    display: list-item;
+    list-style: square;
 }
