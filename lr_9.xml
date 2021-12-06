@@ -1,0 +1,55 @@
+<?xml-stylesheet type="text/xsl" href="lr_9.xsl"?>
+<timetable>
+    <path>
+        <way>Днепр</way>
+        <stops>
+            <stop>1 остановка</stop>
+            <stop>2 остановка</stop>
+            <stop>3 остановка</stop>
+            <stop>4 остановка</stop>
+        </stops>
+        <datestart>09.10.21</datestart>
+        <timesstart>
+            <timestart>10:00</timestart>
+            <timestart>12:00</timestart>
+            <timestart>14:00</timestart>
+            <timestart>16:00</timestart>
+            <timestart>18:00</timestart>
+        </timesstart>
+        <price>325,00₴</price>
+        <countfreeplaces>20 мест</countfreeplaces>
+    </path>
+    <path>
+        <way>Киев</way>
+        <stops>
+            <stop>1 остановка</stop>
+            <stop>2 остановка</stop>
+        </stops>
+        <datestart>09.10.21</datestart>
+        <timesstart>
+            <timestart>9:00</timestart>
+            <timestart>12:00</timestart>
+            <timestart>15:00</timestart>
+            <timestart>18:00</timestart>
+            <timestart>21:00</timestart>
+        </timesstart>
+        <price>225,00₴</price>
+        <countfreeplaces>15 мест</countfreeplaces>
+    </path>
+    <path>
+        <way>Кривой Рог</way>
+        <stops>
+            <stop>1 остановка</stop>
+            <stop>2 остановка</stop>
+            <stop>3 остановка</stop>
+        </stops>
+        <datestart>09.10.21</datestart>
+        <timesstart>
+            <timestart>9:00</timestart>
+            <timestart>15:00</timestart>
+            <timestart>21:00</timestart>
+        </timesstart>
+        <price>225,00₴</price>
+        <countfreeplaces>15 мест</countfreeplaces>
+    </path>
+</timetable>
