@@ -20,7 +20,7 @@
                         </tr>
                         <xsl:for-each select="path">
                             <!-- <xsl:sort select="way" order="descending"/> -->
-                            <!-- <xsl:if test="position()!=last()">-->
+                            <!-- <xsl:if test="position()!=last()"> -->
                             <tr>
                                 <td>
                                     <xsl:value-of select="way" />
